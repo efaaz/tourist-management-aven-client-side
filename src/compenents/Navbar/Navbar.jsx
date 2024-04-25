@@ -159,7 +159,7 @@ function Navbar() {
         </div>
         <div className="navbar-end">
           {loading ? (
-            // Display a loading spinner or indicator
+            // Display a loading spinner
             <div className="flex items-center justify-center">
               <div className="loader mr-4">
                 <DotSpinner></DotSpinner>
