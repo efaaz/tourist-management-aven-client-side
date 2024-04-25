@@ -1,4 +1,6 @@
 # React + Vite
+Client side repository link: https://github.com/programming-hero-web-course-4/B9A10-client-side-efaaz
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
