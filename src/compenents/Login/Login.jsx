@@ -17,44 +17,105 @@ function Login() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const login = async (data) => {
+  const login = (data) => {
     setError("");
-    try {
-      // console.log("Login function called with data:", data);
-      await signIn(data.Email, data.Password);
-      toast("sign-in successful");
-      navigate(location?.pathname ? location.state : "/");
+    signIn(data.Email, data.Password)
+      .then((userCredential) => {
+        const email = userCredential.user?.email;
+        const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
+        const userInfo = { email, lastLoggedAt: lastLoggedAt };
+        console.log(userInfo);
+        // update last logged at in the database
+        fetch("http://localhost:5000/user", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            navigate(location?.state?.from?.pathname || "/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((error) => {
+        setError(error.message);
+        toast("Invalid user credential");
+      });
+  };
 
-      // Perform additional login logic here, e.g. redirecting the user
-    } catch (error) {
+  const handleGitHubSignin = (event) => {
+    setError("");
+    gitHubSignin()
+    googleSignin()
+    .then((userCredential) => {
+      console.log(userCredential);
+      const email = userCredential.user?.email;
+      const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
+      const creationTime = userCredential.user?.metadata?.creationTime
+      const userInfo = { email:email, creationTime:creationTime, lastLoggedAt: lastLoggedAt };
+      console.log(userInfo);
+      // update last logged at in the database
+      fetch("http://localhost:5000/user", {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          navigate(location?.state?.from?.pathname || "/");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((error) => {
       setError(error.message);
       toast("Invalid user credential");
-    }
+    });
   };
 
-  const handleGitHubSignin = async (event) => {
+  const handleGoogleSignin = (event) => {
     setError("");
-    try {
-      const result = await gitHubSignin();
-      toast("sign-in successful");
-      navigate(location?.pathname ? location.state : "/");
-    } catch (err) {
+    googleSignin()
+    .then((userCredential) => {
+      console.log(userCredential);
+      const email = userCredential.user?.email;
+      const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
+      const creationTime = userCredential.user?.metadata?.creationTime
+      const userInfo = { email:email, creationTime:creationTime, lastLoggedAt: lastLoggedAt };
+      console.log(userInfo);
+      // update last logged at in the database
+      fetch("http://localhost:5000/user", {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          navigate(location?.state?.from?.pathname || "/");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((error) => {
       setError(error.message);
-    }
-  };
-  const handleGoogleSignin = async (event) => {
-    setError("");
-    try {
-      const result = await googleSignin();
-      toast("sign-in successful");
-      navigate(location?.pathname ? location.state : "/");
-    } catch (err) {
-      setError(error.message);
-    }
+      toast("Invalid user credential");
+    });
   };
   return (
     <>
-      <ToastContainer />
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
