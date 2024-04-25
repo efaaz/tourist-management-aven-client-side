@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 function Register() {
-  const { signUp, updateProfile, logOut } = useContext(AuthContext);
+  const { signUp, updateProfile, logOut, user } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -16,10 +16,7 @@ function Register() {
   const [error, setError] = useState("");
 
   function validatePassword(password) {
-    // Regular expression pattern for the password
     const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-
-    // Check if the password matches the pattern
     if (!passwordPattern.test(password)) {
       setError(
         "Password must be at least 6 characters long and contain at least one digit, one lowercase letter, and one uppercase letter."
@@ -29,32 +26,50 @@ function Register() {
     return true;
   }
 
-  const logUp = async (data) => {
+  const logUp = (data) => {
     setError("");
     const password = data.Password;
 
-    // Validate the password using the validatePassword function
     if (!validatePassword(password)) {
-      return; // If validation fails, return early
+      return;
     }
 
-    try {
-      console.log("Form data submitted: ", data);
+    // Use then-catch approach for promise handling
+    signUp(data.Email, data.Password)
+      .then((userCredential) => {
+        const createdAt = userCredential.user?.metadata?.creationTime;
+        const email = userCredential.user?.email;
+        const userInfo = { email, createdAt: createdAt };
+        fetch(
+          "http://localhost:5000/user",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(userInfo),
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              console.log("user added to the database");
+            }
+          });
+        // Update profile after successful signup
+        return updateProfile(data.Name, data.PhotoURL).then(() => {
+          // Optional: Logging out after profile update
+          logOut();
+        });
+      })
+      .then(() => {
+        toast("Sign-up successful");
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
 
-      // Call the signUp function from AuthContext
-      const userCredential = await signUp(data.Email, data.Password);
-
-      // After successful sign-up, update the user's profile
-      await updateProfile(data.Name, data.PhotoURL);
-
-
-      await logOut()
-
-      // Display a success message
-      toast("Sign up successful");
-    } catch (err) {
-      setError(err.message);
-    }
+    // Note that `user` may be undefined due to asynchronous nature
   };
   return (
     <>
