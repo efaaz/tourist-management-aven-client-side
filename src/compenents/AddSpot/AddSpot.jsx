@@ -15,6 +15,8 @@ function AddSpot() {
     const time = form.time.value;
     const visitorCount = form.visitorCount.value;
     const description = form.description.value;
+
+    
   }
   return (
     <>

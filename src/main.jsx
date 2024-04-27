@@ -11,6 +11,8 @@ import AuthProvider, { AuthContext } from "./Providers/AuthProvider.jsx";
 import AllSpot from "./compenents/AllSpot/AllSpot.jsx";
 import AddSpot from "./compenents/AddSpot/AddSpot.jsx";
 import MyList from "./compenents/MyList/MyList.jsx";
+import ViewDetails from "./compenents/ViewDetails/ViewDetails.jsx";
+import AddingJsonFile from "./compenents/AddingJsonFile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,15 @@ const router = createBrowserRouter([
       {
         path: "/my-list",
         element: <MyList></MyList>,
+      },
+      {
+        path: "/viewDetails/:id",
+        element: <ViewDetails></ViewDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+      },
+      {
+        path: "/json",
+        element: <AddingJsonFile></AddingJsonFile>,
       },
     ],
   },
