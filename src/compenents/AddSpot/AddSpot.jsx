@@ -6,17 +6,43 @@ function AddSpot() {
     e.preventDefault();
     const form = e.target;
     const country = form.country.value;
-    const Username = form.Username.value;
-    const email = form.email.value;
+    const username = form.Username.value;
+    const useremail = form.email.value;
     const SpotName = form.SpotName.value;
     const img = form.img.value;
     const cost = form.cost.value;
     const season = form.season.value;
+    const area = form.location.value;
     const time = form.time.value;
     const visitorCount = form.visitorCount.value;
     const description = form.description.value;
 
-    
+    const data ={
+      name : username,
+      email : useremail,
+      totaVisitorsPerYear : visitorCount,
+      country_Name : country,
+      tourists_spot_name : SpotName,
+      average_cost : cost,
+      image :img,
+      travel_time:time,
+      location:area,
+      seasonality : season,
+      short_description:description
+    };
+
+    fetch('http://localhost:5000/spots', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+      })
+
   }
   return (
     <>
@@ -163,6 +189,21 @@ function AddSpot() {
                 </div>
               </div>
             </div>
+            <div className="mb-2">
+                  <label
+                    htmlFor="Name"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Location
+                  </label>
+                  <input
+                    name="location"
+                    type="text"
+                    id="name"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Location"
+                  />
+                </div>
             <div className="">
             <label
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
