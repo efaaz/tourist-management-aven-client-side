@@ -110,7 +110,7 @@ function Home() {
           treasures.
         </p>
       </div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 max-w-7xl justify-center mx-auto md:grid-cols-2">
+      <div className="">
         <Countires></Countires>
       </div>
     </>

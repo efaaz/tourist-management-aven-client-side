@@ -1,9 +1,45 @@
-import React from 'react'
+import React from "react";
+import { FaLocationDot } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
-function Country() {
+function Country(props) {
+  const {
+    _id,
+    country_name,
+    image,
+    short_description,
+  } = props.data;
   return (
-    <div>Country</div>
-  )
+    <>
+      <div className="mb-6" data-aos="zoom-in">
+        <NavLink to={`/viewDetails/${_id}`}>
+          <div className="card card-compact w-96 h-[100%] bg-base-100 shadow-xl mx-auto">
+            <figure>
+              <img
+                src={image} // Corrected image source
+                alt="Estate"
+              />
+            </figure>
+            <div className="card-body">
+              <div className="flex justify-between">
+                <div className="flex gap-1 items-center font-semibold">
+                  <FaLocationDot />
+                  <h2 className="card-title">{country_name}</h2>
+                </div>
+              </div>
+              <p className="font-semibold text-base">{short_description}
+              </p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary w-full">
+                  View Details{" "}
+                </button>
+              </div>
+            </div>
+          </div>
+        </NavLink>
+      </div>
+    </>
+  );
 }
 
-export default Country
+export default Country;
