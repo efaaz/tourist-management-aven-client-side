@@ -1,0 +1,71 @@
+{
+    "tourist_spots": [
+      {
+        "image": "https://example.com/eiffel_tower.jpg",
+        "tourists_spot_name": "Eiffel Tower",
+        "country_Name": "France",
+        "location": "Paris",
+        "short_description": "An iconic symbol of Paris and France, the Eiffel Tower is a wrought-iron lattice tower offering panoramic views of the city.",
+        "average_cost": 25,
+        "seasonality": "All year",
+        "travel_time": "1 day",
+        "totaVisitorsPerYear": 7000000
+      },
+      {
+        "image": "https://example.com/colosseum.jpg",
+        "tourists_spot_name": "Colosseum",
+        "country_Name": "Italy",
+        "location": "Rome",
+        "short_description": "An ancient Roman amphitheater, the Colosseum is known for its impressive architecture and historical significance.",
+        "average_cost": 18,
+        "seasonality": "All year",
+        "travel_time": "1 day",
+        "totaVisitorsPerYear": 6000000
+      },
+      {
+        "image": "https://example.com/sagrada_familia.jpg",
+        "tourists_spot_name": "Sagrada Familia",
+        "country_Name": "Spain",
+        "location": "Barcelona",
+        "short_description": "A massive basilica designed by Antoni Gaudí, known for its unique architectural style and ongoing construction.",
+        "average_cost": 20,
+        "seasonality": "All year",
+        "travel_time": "1 day",
+        "totaVisitorsPerYear": 4500000
+      },
+      {
+        "image": "https://example.com/matterhorn.jpg",
+        "tourists_spot_name": "Matterhorn",
+        "country_Name": "Switzerland",
+        "location": "Zermatt",
+        "short_description": "A famous mountain in the Swiss Alps, the Matterhorn is a popular destination for climbers and outdoor enthusiasts.",
+        "average_cost": 100,
+        "seasonality": "Summer",
+        "travel_time": "1 day",
+        "totaVisitorsPerYear": 500000
+      },
+      {
+        "image": "https://example.com/anne_frank_house.jpg",
+        "tourists_spot_name": "Anne Frank House",
+        "country_Name": "Netherlands",
+        "location": "Amsterdam",
+        "short_description": "The Anne Frank House is a museum dedicated to the Jewish wartime diarist Anne Frank, offering insights into her life during WWII.",
+        "average_cost": 15,
+        "seasonality": "All year",
+        "travel_time": "1 day",
+        "totaVisitorsPerYear": 1500000
+      },
+      {
+        "image": "https://example.com/louvre_museum.jpg",
+        "tourists_spot_name": "Louvre Museum",
+        "country_Name": "France",
+        "location": "Paris",
+        "short_description": "The Louvre is the world's largest art museum, home to thousands of works including the Mona Lisa and the Venus de Milo.",
+        "average_cost": 17,
+        "seasonality": "All year",
+        "travel_time": "1 day",
+        "totaVisitorsPerYear": 9600000
+      }
+    ]
+  }
+  
