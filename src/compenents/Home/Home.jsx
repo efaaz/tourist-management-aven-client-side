@@ -3,6 +3,7 @@ import Slider from "../Slider/Slider";
 import Cards from "../Cards/Cards";
 import Countires from "../Countries/Countires";
 import TravelTipsAndGuides from "../TravelGuidesSection/TravelTipsAndGuides";
+import AboutSection from "../AboutSection/AboutSection";
 
 function Home() {
   let sopts = [
@@ -119,8 +120,8 @@ function Home() {
       <div className="">
         <Countires></Countires>
       </div>
-
       <TravelTipsAndGuides></TravelTipsAndGuides>
+      <AboutSection></AboutSection>
     </>
   );
 }

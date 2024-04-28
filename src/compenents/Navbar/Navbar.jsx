@@ -96,7 +96,7 @@ function Navbar() {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost lg:text-3xl text-xl font-bold">
-            Horizon 
+            Aven
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
