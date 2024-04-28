@@ -25,7 +25,7 @@ function AddSpot() {
       name : username,
       email : useremail,
       totaVisitorsPerYear : visitorCount,
-      country_Name : country,
+      country_name : country,
       tourists_spot_name : SpotName,
       average_cost : cost,
       image :img,

@@ -6,7 +6,7 @@ function Card(props) {
   const {
     _id,
     totaVisitorsPerYear,
-    country_Name,
+    country_name,
     tourists_spot_name,
     average_cost,
     image,
@@ -36,7 +36,7 @@ function Card(props) {
                 </div>
               </div>
               <h2 className="card-title">{tourists_spot_name}</h2>
-              <p className="font-semibold text-base">Country: {country_Name}</p>
+              <p className="font-semibold text-base">Country: {country_name}</p>
               <p className="font-semibold text-base">Travle time: {travel_time}</p>
               <p className="font-semibold text-base">Visitors: {totaVisitorsPerYear} per year</p>
               <p className="font-bold text-xl">Avarage cost: ${average_cost}</p>
