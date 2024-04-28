@@ -2,10 +2,8 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 function UpdateSpot() {
   let data = useLoaderData();
-  console.log(data);
   function handleUpdateSpot(e) {
     e.preventDefault();
     const form = e.target;
@@ -34,28 +32,26 @@ function UpdateSpot() {
       season,
       description,
     };
-    console.log(updatedInfo);
 
     fetch(`http://localhost:5000/spots/update/${data._id}`, {
-        method: 'PUT',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(updatedInfo)
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedInfo),
     })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if (data.modifiedCount > 0) {
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Updated Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                })
-            }
-        })
-
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Updated Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   }
   return (
     <section className="m-8 max-w-7xl mx-auto">

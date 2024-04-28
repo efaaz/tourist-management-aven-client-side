@@ -6,15 +6,10 @@ import Swal from "sweetalert2";
 
 function MyList() {
   const [spots, setSpots] = useState([]);
-
-  let { user } = useContext(AuthContext);
-  const email = "2@gmail.com";
-  console.log(email);
   const [loading, setLoading] = useState(true); // Track loading state
 
-
-
-
+      let { user } = useContext(AuthContext);
+      const email = user?.email;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,58 +25,38 @@ function MyList() {
       }
     };
     fetchData();
-  }, []);
+  }, [email]);
 
-
-
-
-  const handleDelete = _id => {
-    console.log(_id);
+  const handleDelete = (_id) => {
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-        if (result.isConfirmed) {
-
-
-            fetch(`http://localhost:5000/spots/delete/${_id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount > 0) {
-                        Swal.fire(
-                            'Deleted!',
-                            'Your spot has been deleted.',
-                            'success'
-                        )
-                        const remaining = spots.filter(spot => spot._id !== _id);
-                        setSpots(remaining);
-                    }
-                })
-
-        }
-    })}
-
-
-
-
-
-
-
-
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/spots/delete/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your spot has been deleted.", "success");
+              const remaining = spots.filter((spot) => spot._id !== _id);
+              setSpots(remaining);
+            }
+          });
+      }
+    });
+  };
 
   if (loading) {
     // Render loader when loading is true
     return <Spinner></Spinner>;
   }
-  console.log(spots.length);
   if (spots.length === 0) {
     return (
       <div className="min-h-screen flex justify-center items-center lg:text-6xl text-xl">
@@ -104,20 +79,31 @@ function MyList() {
               />
 
               <div className="card-body">
-              <h2 className="card-title">{spot.tourists_spot_name}</h2>
-              <p className="font-semibold text-base">Country: {spot.country_Name}</p>
-              <p className="font-semibold text-base">Travle time: {spot.travel_time} days</p>
-              <p className="font-semibold text-base">Visitors: {spot.totaVisitorsPerYear} per year</p>
-              <p className="font-bold text-xl">Avarage cost: ${spot.average_cost}</p>
+                <h2 className="card-title">{spot.tourists_spot_name}</h2>
+                <p className="font-semibold text-base">
+                  Country: {spot.country_Name}
+                </p>
+                <p className="font-semibold text-base">
+                  Travle time: {spot.travel_time} days
+                </p>
+                <p className="font-semibold text-base">
+                  Visitors: {spot.totaVisitorsPerYear} per year
+                </p>
+                <p className="font-bold text-xl">
+                  Avarage cost: ${spot.average_cost}
+                </p>
                 <div className="flex gap-2">
                   <NavLink to={`/spots/update/${spot._id}`}>
                     <button className="btn-accent btn text-white rounded-2xl">
                       Update
                     </button>
                   </NavLink>
-                    <button className="btn btn-warning text-white rounded-2xl" onClick={() => handleDelete(spot._id)}>
-                      Delete
-                    </button>
+                  <button
+                    className="btn btn-warning text-white rounded-2xl"
+                    onClick={() => handleDelete(spot._id)}
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>

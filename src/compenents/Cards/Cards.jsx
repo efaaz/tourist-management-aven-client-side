@@ -6,7 +6,7 @@ function Cards() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const res = await fetch("http://localhost:5000/spots"); // Absolute path to the public folder
+            const res = await fetch("http://localhost:5000/spots/unique"); // Absolute path to the public folder
             const data = await res.json();
             setCardDetails(data);
           } catch (error) {

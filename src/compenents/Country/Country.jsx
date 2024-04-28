@@ -12,7 +12,6 @@ function Country(props) {
   return (
     <>
       <div className="mb-6" data-aos="zoom-in">
-        <NavLink to={`/viewDetails/${_id}`}>
           <div className="card card-compact w-96 h-[100%] bg-base-100 shadow-xl mx-auto">
             <figure>
               <img
@@ -30,13 +29,14 @@ function Country(props) {
               <p className="font-semibold text-base">{short_description}
               </p>
               <div className="card-actions justify-end">
+                <NavLink to={`/country/${country_name}`}>
                 <button className="btn btn-primary w-full">
-                  View Details{" "}
+                  View tourist spots
                 </button>
+                </NavLink>
               </div>
             </div>
           </div>
-        </NavLink>
       </div>
     </>
   );

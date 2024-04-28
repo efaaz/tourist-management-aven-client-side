@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 function AddSpot() {
-
+  let { user } = useContext(AuthContext);
+  let defaultEmail = user.email
+  let defaultName = user.displayName
   function handleAddSpot(e){
     e.preventDefault();
     const form = e.target;
@@ -31,7 +35,7 @@ function AddSpot() {
       short_description:description
     };
 
-    fetch('http://localhost:5000/spots', {
+    fetch('http://localhost:5000/all/spots', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'
@@ -40,8 +44,16 @@ function AddSpot() {
   })
       .then(res => res.json())
       .then(data => {
-          console.log(data);
-      })
+        console.log(data);
+        if (data.acknowledged === true) {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Updated Successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            })
+        }
+    })
 
   }
   return (
@@ -73,6 +85,7 @@ function AddSpot() {
                     User Name
                   </label>
                   <input
+                  defaultValue={defaultName}
                     name="Username"
                     type="text"
                     id="name"
@@ -135,6 +148,7 @@ function AddSpot() {
                     User Email
                   </label>
                   <input
+                  defaultValue={defaultEmail}
                     name="email"
                     type="email"
                     id="name"
