@@ -24,21 +24,32 @@ function TravelTipsAndGuides() {
   ];
 
   return (
-    <section className="bg-gray-100 py-10">
+    <section className="bg-gray-100 dark:bg-gray-800 py-10"> {/* Ensure background changes for dark theme */}
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-6">Travel Tips and Guides</h2>
+        <h2 className="text-3xl font-bold mb-6 dark:text-white"> {/* Ensure text changes for dark theme */}
+          Travel Tips and Guides
+        </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {tips.map((tip, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6"
+            > {/* Ensure card background changes for dark theme */}
               <img
                 src={tip.image}
                 alt={tip.title}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-xl font-semibold mb-2">{tip.title}</h3>
-              <p className="text-gray-600">{tip.description}</p>
+              <h3 className="text-xl font-semibold mb-2 dark:text-white"> {/* Ensure text changes for dark theme */}
+                {tip.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300"> {/* Ensure text changes for dark theme */}
+                {tip.description}
+              </p>
               <NavLink to="/more-tips" className="mt-4 inline-block">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+                <button
+                  className="bg-blue-500 dark:bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition duration-300"
+                > {/* Ensure button changes for dark theme */}
                   Learn More
                 </button>
               </NavLink>

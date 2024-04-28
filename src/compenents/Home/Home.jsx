@@ -107,7 +107,7 @@ function Home() {
       </div>
       <Cards></Cards>
       <div className="text-center max-w-7xl mx-auto">
-        <h1 className="lg:text-4xl text-2xl font-bold text-[#131318]">
+        <h1 className="lg:text-4xl text-2xl font-bold text-[#131318] dark:text-white">
           Country Sections
         </h1>
         <p className="text-[#03071299] font-normal lg:text-base text-xs pt-4 pb-12 px-6">
