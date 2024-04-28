@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Typewriter } from 'react-simple-typewriter';
 
 function TravelTipsAndGuides() {
   const tips = [
@@ -27,7 +28,18 @@ function TravelTipsAndGuides() {
     <section className="bg-gray-100 dark:bg-gray-800 py-10"> {/* Ensure background changes for dark theme */}
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-6 dark:text-white"> {/* Ensure text changes for dark theme */}
-          Travel Tips and Guides
+          Travel 
+          <span style={{ color: 'red', fontWeight: 'bold' }}>
+          <Typewriter
+            words={[' Tips and Guides!']} // Words to display
+            loop={5} // Number of times to loop
+            cursor // Enable cursor
+            cursorStyle="_" // Cursor style
+            typeSpeed={70} // Speed of typing
+            deleteSpeed={50} // Speed of deletion
+            delaySpeed={1000} // Delay between loops
+          />
+        </span>
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {tips.map((tip, index) => (

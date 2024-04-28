@@ -15,6 +15,7 @@ import ViewDetails from "./compenents/ViewDetails/ViewDetails.jsx";
 import UpdateSpot from "./compenents/UpdateSpot/UpdateSpot.jsx";
 import CountryWiseSpots from "./compenents/CountryWiseSpot/CountryWiseSpots.jsx";
 import PrivateRoute from "./compenents/PrivateRoute/PrivateRoute.jsx";
+import App from "./App.jsx";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         path: "/country/:country",
         element: <CountryWiseSpots></CountryWiseSpots>,
         loader: ({params}) => fetch(`http://localhost:5000/${params.country}`)
+      },
+      {
+        path: "/App",
+        element: <App />,
       },
     ],
   },
