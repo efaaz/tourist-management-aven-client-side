@@ -14,6 +14,7 @@ import MyList from "./compenents/MyList/MyList.jsx";
 import ViewDetails from "./compenents/ViewDetails/ViewDetails.jsx";
 import UpdateSpot from "./compenents/UpdateSpot/UpdateSpot.jsx";
 import CountryWiseSpots from "./compenents/CountryWiseSpot/CountryWiseSpots.jsx";
+import PrivateRoute from "./compenents/PrivateRoute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,15 +41,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-spot",
-        element: <AddSpot></AddSpot>,
+        element: <PrivateRoute><AddSpot></AddSpot></PrivateRoute> ,
       },
       {
         path: "/my-list",
-        element: <MyList></MyList>,
+        element: <PrivateRoute><MyList></MyList></PrivateRoute> ,
       },
       {
         path: "/viewDetails/:id",
-        element: <ViewDetails></ViewDetails>,
+        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute> ,
         loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
       },
       {
