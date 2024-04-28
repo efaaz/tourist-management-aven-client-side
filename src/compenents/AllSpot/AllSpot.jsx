@@ -71,7 +71,7 @@ function AllSpot() {
                   </div>
                   <h2 className="card-title">{spot.tourists_spot_name}</h2>
                   <p className="font-semibold text-base">
-                    Country: {spot.country_Name}
+                    Country: {spot.country_name}
                   </p>
                   <p className="font-semibold text-base">
                     Travel time: {spot.travel_time}
