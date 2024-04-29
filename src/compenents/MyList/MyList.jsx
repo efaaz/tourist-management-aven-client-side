@@ -72,7 +72,7 @@ function MyList() {
           {spots.map((spot) => (
             <div
               key={spot._id}
-              className="card lg:card-side bg-base-100 border border-[#13131326] p-2 container mx-auto mt-5 work"
+              className="card lg:card-side bg-base-100 border p-2 container mx-auto mt-5 work"
             >
               <img
                 src={spot.image}

@@ -2,9 +2,27 @@ import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../../Providers/AuthProvider";
 import DotSpinner from "../Loading/DotSpinner";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 function Navbar() {
+ const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+
+
+ function handleToggle(e){
+  if (e.target.checked) {
+    setTheme("dark");
+  }else{
+    setTheme("light");
+  }
+  
+ }
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme])
+  
+
   const { user, logOut, loading } = useContext(AuthContext);
   let img;
   if (user && user.photoURL) {
@@ -43,7 +61,7 @@ function Navbar() {
                     `mx-4 text-lg ${
                       isActive
                         ? "btn btn-outline rounded-full text-yellow-500 font-semibold"
-                        : "text-gray-700"
+                        : ""
                     }`
                   }
                 >
@@ -57,7 +75,7 @@ function Navbar() {
                     `mx-2 text-lg ${
                       isActive
                         ? "btn btn-outline rounded-full text-yellow-500 font-semibold"
-                        : "text-gray-700"
+                        : ""
                     }`
                   }
                 >
@@ -71,7 +89,7 @@ function Navbar() {
                     `mx-2 text-lg ${
                       isActive
                         ? "btn btn-outline rounded-full text-yellow-500 font-semibold"
-                        : "text-gray-700"
+                        : ""
                     }`
                   }
                 >
@@ -85,7 +103,7 @@ function Navbar() {
                     `mx-2 text-lg  ${
                       isActive
                         ? "btn btn-outline rounded-full text-yellow-500 font-semibold"
-                        : "text-gray-700"
+                        : ""
                     }`
                   }
                 >
@@ -107,7 +125,7 @@ function Navbar() {
                   `mx-2 text-lg ${
                     isActive
                       ? "btn btn-outline rounded-full text-yellow-500 font-semibold"
-                      : "text-gray-700"
+                      : ""
                   }`
                 }
               >
@@ -121,7 +139,7 @@ function Navbar() {
                   `mx-2 text-lg ${
                     isActive
                       ? "btn btn-outline rounded-full text-yellow-500 font-semibold"
-                      : "text-gray-700"
+                      : ""
                   }`
                 }
               >
@@ -135,7 +153,7 @@ function Navbar() {
                   `mx-2 text-lg ${
                     isActive
                       ? "btn btn-outline rounded-full text-yellow-500 font-semibold"
-                      : "text-gray-700"
+                      : ""
                   }`
                 }
               >
@@ -148,7 +166,7 @@ function Navbar() {
                 `mx-2 text-lg dark:text-white ${
                   isActive
                     ? "btn btn-outline rounded-full !text-yellow-500 font-semibold"
-                    : "text-gray-700"
+                    : ""
                 }`
               }
             >
@@ -157,6 +175,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="navbar-end">
+        <input type="checkbox" className="toggle mr-2" onChange={handleToggle} />
           {loading ? (
             // Display a loading spinner
             <div className="flex items-center justify-center">

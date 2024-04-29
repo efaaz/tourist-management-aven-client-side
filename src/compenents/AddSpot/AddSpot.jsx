@@ -60,7 +60,7 @@ function AddSpot() {
       <section className="m-8 max-w-7xl mx-auto">
         <form className="border" onSubmit={handleAddSpot}>
           <div className="p-6 space-y-2 md:space-y-6">
-            <h1 className="text-xl font-bold text-center leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            <h1 className="text-xl font-bold text-center leading-tight tracking-tight">
               Add Your Tourist Spot
             </h1>
             <div className="border p-2 rounded-lg">

@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { IoIosTime } from "react-icons/io";
@@ -42,13 +41,13 @@ function Card(props) {
               <h2 className="card-title font-bold">{tourists_spot_name}</h2>
 
               <hr />
-              <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mt-1">
+              <div className="flex gap-1 text-lg items-center font-semibold mt-1">
                 <IoIosTime></IoIosTime>
                 <p className="font-semibold text-base">
                   Travle time: {travel_time}
                 </p>
               </div>
-              <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mb-1">
+              <div className="flex gap-1 text-lg items-center font-semibold mb-1">
                 <HiOutlineUserGroup />
                 <p className="font-semibold text-base">
                   Visitors: {totaVisitorsPerYear} per year

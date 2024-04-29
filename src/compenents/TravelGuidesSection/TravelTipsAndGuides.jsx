@@ -28,7 +28,7 @@ function TravelTipsAndGuides() {
   ];
 
   return (
-    <section className="bg-gray-100 dark:bg-gray-800 py-10">
+    <section className=" dark:bg-gray-800 py-10">
       {" "}
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-6 dark:text-white">
@@ -50,7 +50,7 @@ function TravelTipsAndGuides() {
           {tips.map((tip, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6"
+              className=" dark:bg-gray-700 rounded-lg shadow-lg p-6"
             >
               {" "}
               <img
@@ -58,20 +58,18 @@ function TravelTipsAndGuides() {
                 alt={tip.title}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-xl font-semibold mb-2 dark:text-white">
+              <h3 className="text-xl font-semibold mb-2 ">
                 {" "}
                 {tip.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="card-title mb-2 text-sm">
                 {" "}
                 {tip.description}
               </p>
-              <NavLink to="/more-tips" className="mt-4 inline-block">
-                <button className="bg-blue-500 dark:bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
+                <button className="text-white bg-blue-500 dark:bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
                   {" "}
                   Learn More
                 </button>
-              </NavLink>
             </div>
           ))}
         </div>

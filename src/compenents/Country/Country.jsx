@@ -28,7 +28,7 @@ function Country(props) {
             <p className="font-semibold text-base">{short_description}</p>
             <div className="card-actions justify-end">
               <NavLink to={`/country/${country_name}`}>
-                <button className="btn btn-primary w-full">
+                <button className="btn text-white btn-primary w-full">
                   View tourist spots
                 </button>
               </NavLink>

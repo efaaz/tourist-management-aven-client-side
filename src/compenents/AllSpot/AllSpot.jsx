@@ -82,13 +82,13 @@ function AllSpot() {
                       {spot.tourists_spot_name}
                     </h2>
                     <hr />
-                    <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mt-1">
+                    <div className="flex gap-1 text-lg items-center font-semibol mt-1">
                       <IoIosTime></IoIosTime>
                       <p className="font-semibold text-base">
                         Travle time: {spot.travel_time}
                       </p>
                     </div>
-                    <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mb-1">
+                    <div className="flex gap-1 text-lg items-center font-semibold mb-1">
                       <HiOutlineUserGroup />
                       <p className="font-semibold text-base">
                         Visitors: {spot.totaVisitorsPerYear} per year

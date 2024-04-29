@@ -22,7 +22,7 @@ function ViewDetails() {
   } = data;
 
   return (
-    <section className="hero min-h-screen bg-gray-100">
+    <section className="hero min-h-screen">
       <div className="container mx-auto py-12 px-6">
         <div className="flex flex-col lg:flex-row items-center gap-10">
           <img
@@ -33,45 +33,45 @@ function ViewDetails() {
 
           <div className="lg:w-1/2">
             <div className="flex justify-between lg:flex-row flex-col">
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">
+              <h2 className="text-2xl font-bold  mb-2">
                 {tourists_spot_name}
               </h2>
-              <div className="flex gap-1 text-2xl items-center font-bold text-gray-700 mb-2">
+              <div className="flex gap-1 text-2xl items-center font-bold mb-2">
                 <FaLocationDot className="text-lg" />
                 <p>{location}</p>
               </div>
             </div>
             <hr />
 
-            <p className="text-lg font-semibold text-gray-700 mt-2">
+            <p className="text-lg font-semibold mt-2">
               {short_description}
             </p>
-            <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mt-2 mb-2">
-              <p className="text-lg font-semibold text-gray-700">
+            <div className="flex gap-1 text-lg items-center font-semibol mt-2 mb-2">
+              <p className="text-lg font-semibold">
                 Country: {country_name}
               </p>
             </div>
             <hr />
-            <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mt-2">
+            <div className="flex gap-1 text-lg items-center font-semibold mt-2">
               <IoIosTime></IoIosTime>
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-lg font-semibol">
                 Travel time: {travel_time}
               </p>
             </div>
-            <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mt-2">
+            <div className="flex gap-1 text-lg items-center font-semibold mt-2">
               <HiOutlineUserGroup />
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-lg font-semibold">
                 Visitors: {totaVisitorsPerYear} per year
               </p>
             </div>
-            <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mt-2 mb-2">
+            <div className="flex gap-1 text-lg items-center font-semibold mt-2 mb-2">
               <BsFillCloudsFill />
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-lg font-semibold">
                 Season: {seasonality}
               </p>
             </div>
             <hr />
-            <p className="py-2 font-bold text-xl text-gray-900">
+            <p className="py-2 font-bold text-x">
               Average cost: ${average_cost}
             </p>
           </div>
