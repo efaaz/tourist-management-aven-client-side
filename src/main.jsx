@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: "/all-spot",
         element: <AllSpot></AllSpot>,
-        loader: () => fetch("http://localhost:5000/all/spots")
+        loader: () => fetch("https://server-side-ecru-zeta.vercel.app/all/spots")
       },
       {
         path: "/add-spot",
@@ -51,17 +51,17 @@ const router = createBrowserRouter([
       {
         path: "/viewDetails/:id",
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute> ,
-        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+        loader: ({params}) => fetch(`https://server-side-ecru-zeta.vercel.app/spots/${params.id}`)
       },
       {
         path: "/spots/update/:id",
         element: <UpdateSpot></UpdateSpot>,
-        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+        loader: ({params}) => fetch(`https://server-side-ecru-zeta.vercel.app/spots/${params.id}`)
       },
       {
         path: "/country/:country",
         element: <CountryWiseSpots></CountryWiseSpots>,
-        loader: ({params}) => fetch(`http://localhost:5000/${params.country}`)
+        loader: ({params}) => fetch(`https://server-side-ecru-zeta.vercel.app/${params.country}`)
       },
       {
         path: "/App",

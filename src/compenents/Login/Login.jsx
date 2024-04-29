@@ -26,7 +26,7 @@ function Login() {
         const userInfo = { email, lastLoggedAt: lastLoggedAt };
         console.log(userInfo);
         // update last logged at in the database
-        fetch("http://localhost:5000/user", {
+        fetch("https://server-side-ecru-zeta.vercel.app/user", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
@@ -60,7 +60,7 @@ function Login() {
       const userInfo = { email:email, creationTime:creationTime, lastLoggedAt: lastLoggedAt };
       console.log(userInfo);
       // update last logged at in the database
-      fetch("http://localhost:5000/user", {
+      fetch("https://server-side-ecru-zeta.vercel.app/user", {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -93,7 +93,7 @@ function Login() {
       const userInfo = { email:email, creationTime:creationTime, lastLoggedAt: lastLoggedAt };
       console.log(userInfo);
       // update last logged at in the database
-      fetch("http://localhost:5000/user", {
+      fetch("https://server-side-ecru-zeta.vercel.app/user", {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

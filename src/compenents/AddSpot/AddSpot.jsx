@@ -35,7 +35,7 @@ function AddSpot() {
       short_description:description
     };
 
-    fetch('http://localhost:5000/all/spots', {
+    fetch('https://server-side-ecru-zeta.vercel.app/all/spots', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

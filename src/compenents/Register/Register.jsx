@@ -41,7 +41,7 @@ function Register() {
         const email = userCredential.user?.email;
         const userInfo = { email, createdAt: createdAt };
         fetch(
-          "http://localhost:5000/user",
+          "https://server-side-ecru-zeta.vercel.app/user",
           {
             method: "POST",
             headers: {

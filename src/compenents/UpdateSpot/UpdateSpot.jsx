@@ -33,7 +33,7 @@ function UpdateSpot() {
       description,
     };
 
-    fetch(`http://localhost:5000/spots/update/${data._id}`, {
+    fetch(`https://server-side-ecru-zeta.vercel.app/spots/update/${data._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

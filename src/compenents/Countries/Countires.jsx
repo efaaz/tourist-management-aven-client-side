@@ -6,7 +6,7 @@ function Countires() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const res = await fetch("http://localhost:5000/countries"); // Absolute path to the public folder
+            const res = await fetch("https://server-side-ecru-zeta.vercel.app/countries"); // Absolute path to the public folder
             const data = await res.json();
             setCardDetails(data);
           } catch (error) {

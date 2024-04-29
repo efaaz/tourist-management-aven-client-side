@@ -15,7 +15,7 @@ function MyList() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/spots/user/${email}`); // Absolute path to the public folder
+        const res = await fetch(`https://server-side-ecru-zeta.vercel.app/spots/user/${email}`); // Absolute path to the public folder
         const data = await res.json();
         setSpots(data);
       } catch (error) {
@@ -38,7 +38,7 @@ function MyList() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/spots/delete/${_id}`, {
+        fetch(`https://server-side-ecru-zeta.vercel.app/spots/delete/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
