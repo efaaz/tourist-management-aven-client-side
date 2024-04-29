@@ -8,14 +8,16 @@ function MyList() {
   const [spots, setSpots] = useState([]);
   const [loading, setLoading] = useState(true); // Track loading state
 
-      let { user } = useContext(AuthContext);
-      const email = user?.email;
+  let { user } = useContext(AuthContext);
+  const email = user?.email;
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`https://server-side-ecru-zeta.vercel.app/spots/user/${email}`); // Absolute path to the public folder
+        const res = await fetch(
+          `https://server-side-ecru-zeta.vercel.app/spots/user/${email}`
+        ); // Absolute path to the public folder
         const data = await res.json();
         setSpots(data);
       } catch (error) {
@@ -77,7 +79,6 @@ function MyList() {
                 className="lg:w-[30%] w-[100%] my-auto mx-auto rounded-2xl"
                 alt="Album"
               />
-
               <div className="card-body">
                 <h2 className="card-title">{spot.tourists_spot_name}</h2>
                 <p className="font-semibold text-base">

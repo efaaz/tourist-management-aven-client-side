@@ -34,21 +34,27 @@ function Card(props) {
                   <p className="font-bold">{location}</p>
                 </div>
                 <div>
-                <p className="font-bold text-base text-yellow-500">{country_name}</p>
+                  <p className="font-bold text-base text-yellow-500">
+                    {country_name}
+                  </p>
                 </div>
               </div>
               <h2 className="card-title font-bold">{tourists_spot_name}</h2>
-              
+
               <hr />
               <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mt-1">
-              <IoIosTime></IoIosTime>
-              <p className="font-semibold text-base">Travle time: {travel_time}</p>
+                <IoIosTime></IoIosTime>
+                <p className="font-semibold text-base">
+                  Travle time: {travel_time}
+                </p>
               </div>
               <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mb-1">
-              <HiOutlineUserGroup />
-              <p className="font-semibold text-base">Visitors: {totaVisitorsPerYear} per year</p>
+                <HiOutlineUserGroup />
+                <p className="font-semibold text-base">
+                  Visitors: {totaVisitorsPerYear} per year
+                </p>
               </div>
-              
+
               <hr />
               <p className="font-bold text-xl">Avarage cost: ${average_cost}</p>
               <div className="card-actions justify-end">

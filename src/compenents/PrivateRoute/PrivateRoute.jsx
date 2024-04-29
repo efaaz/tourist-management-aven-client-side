@@ -8,9 +8,7 @@ function PrivateRoute({ children }) {
   const location = useLocation();
 
   if (loading) {
-    return (
-      <Spinner></Spinner>
-    );
+    return <Spinner></Spinner>;
   }
   if (user) {
     return children;

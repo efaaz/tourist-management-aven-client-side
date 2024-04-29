@@ -6,7 +6,6 @@ import Spinner from "../Loading/Spinner";
 function CountryWiseSpots() {
   let data = useLoaderData();
 
-
   return (
     <>
       <div className="my-8 grid lg:grid-cols-3 grid-cols-1 max-w-7xl justify-center mx-auto md:grid-cols-2">
@@ -51,6 +50,5 @@ function CountryWiseSpots() {
     </>
   );
 }
-
 
 export default CountryWiseSpots;

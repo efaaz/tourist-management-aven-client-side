@@ -4,9 +4,9 @@ import Swal from "sweetalert2";
 
 function AddSpot() {
   let { user } = useContext(AuthContext);
-  let defaultEmail = user.email
-  let defaultName = user.displayName
-  function handleAddSpot(e){
+  let defaultEmail = user.email;
+  let defaultName = user.displayName;
+  function handleAddSpot(e) {
     e.preventDefault();
     const form = e.target;
     const country = form.country.value;
@@ -21,40 +21,39 @@ function AddSpot() {
     const visitorCount = form.visitorCount.value;
     const description = form.description.value;
 
-    const data ={
-      name : username,
-      email : useremail,
-      totaVisitorsPerYear : visitorCount,
-      country_name : country,
-      tourists_spot_name : SpotName,
-      average_cost : cost,
-      image :img,
-      travel_time:time,
-      location:area,
-      seasonality : season,
-      short_description:description
+    const data = {
+      name: username,
+      email: useremail,
+      totaVisitorsPerYear: visitorCount,
+      country_name: country,
+      tourists_spot_name: SpotName,
+      average_cost: cost,
+      image: img,
+      travel_time: time,
+      location: area,
+      seasonality: season,
+      short_description: description,
     };
 
-    fetch('https://server-side-ecru-zeta.vercel.app/all/spots', {
-      method: 'POST',
+    fetch("https://server-side-ecru-zeta.vercel.app/all/spots", {
+      method: "POST",
       headers: {
-          'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(data)
-  })
-      .then(res => res.json())
-      .then(data => {
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         if (data.acknowledged === true) {
-            Swal.fire({
-                title: 'Success!',
-                text: 'Updated Successfully',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-            })
+          Swal.fire({
+            title: "Success!",
+            text: "Updated Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
         }
-    })
-
+      });
   }
   return (
     <>
@@ -66,7 +65,7 @@ function AddSpot() {
             </h1>
             <div className="border p-2 rounded-lg">
               <label htmlFor="cars">Choose a country:</label>
-              <select name="country" id="cars" >
+              <select name="country" id="cars">
                 <option value="France">France</option>
                 <option value="Italy">Italy</option>
                 <option value="Spain">Spain</option>
@@ -85,7 +84,7 @@ function AddSpot() {
                     User Name
                   </label>
                   <input
-                  defaultValue={defaultName}
+                    defaultValue={defaultName}
                     name="Username"
                     type="text"
                     id="name"
@@ -113,7 +112,7 @@ function AddSpot() {
                     htmlFor="Name"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Avarage Cost 
+                    Avarage Cost
                   </label>
                   <input
                     name="cost"
@@ -148,7 +147,7 @@ function AddSpot() {
                     User Email
                   </label>
                   <input
-                  defaultValue={defaultEmail}
+                    defaultValue={defaultEmail}
                     name="email"
                     type="email"
                     id="name"
@@ -179,7 +178,7 @@ function AddSpot() {
                     Seasonality
                   </label>
                   <input
-                  name="season"
+                    name="season"
                     type="text"
                     id="name"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -204,33 +203,38 @@ function AddSpot() {
               </div>
             </div>
             <div className="mb-2">
-                  <label
-                    htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Location
-                  </label>
-                  <input
-                    name="location"
-                    type="text"
-                    id="name"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Location"
-                  />
-                </div>
-            <div className="">
-            <label
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Short Description
-                  </label>
-                  <textarea name="description" id="" cols="30" rows="5"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  ></textarea>
+              <label
+                htmlFor="Name"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Location
+              </label>
+              <input
+                name="location"
+                type="text"
+                id="name"
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Location"
+              />
             </div>
-            <input type="submit" value="Add" className="w-full btn btn-success text-white" />
+            <div className="">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Short Description
+              </label>
+              <textarea
+                name="description"
+                id=""
+                cols="30"
+                rows="5"
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              value="Add"
+              className="w-full btn btn-success text-white"
+            />
           </div>
-          
         </form>
       </section>
     </>

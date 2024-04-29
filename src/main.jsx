@@ -15,7 +15,6 @@ import ViewDetails from "./compenents/ViewDetails/ViewDetails.jsx";
 import UpdateSpot from "./compenents/UpdateSpot/UpdateSpot.jsx";
 import CountryWiseSpots from "./compenents/CountryWiseSpot/CountryWiseSpots.jsx";
 import PrivateRoute from "./compenents/PrivateRoute/PrivateRoute.jsx";
-import App from "./App.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,34 +37,46 @@ const router = createBrowserRouter([
       {
         path: "/all-spot",
         element: <AllSpot></AllSpot>,
-        loader: () => fetch("https://server-side-ecru-zeta.vercel.app/all/spots")
+        loader: () =>
+          fetch("https://server-side-ecru-zeta.vercel.app/all/spots"),
       },
       {
         path: "/add-spot",
-        element: <PrivateRoute><AddSpot></AddSpot></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <AddSpot></AddSpot>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-list",
-        element: <PrivateRoute><MyList></MyList></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <MyList></MyList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/viewDetails/:id",
-        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute> ,
-        loader: ({params}) => fetch(`https://server-side-ecru-zeta.vercel.app/spots/${params.id}`)
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://server-side-ecru-zeta.vercel.app/spots/${params.id}`),
       },
       {
         path: "/spots/update/:id",
         element: <UpdateSpot></UpdateSpot>,
-        loader: ({params}) => fetch(`https://server-side-ecru-zeta.vercel.app/spots/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`https://server-side-ecru-zeta.vercel.app/spots/${params.id}`),
       },
       {
         path: "/country/:country",
         element: <CountryWiseSpots></CountryWiseSpots>,
-        loader: ({params}) => fetch(`https://server-side-ecru-zeta.vercel.app/${params.country}`)
-      },
-      {
-        path: "/App",
-        element: <App />,
+        loader: ({ params }) =>
+          fetch(`https://server-side-ecru-zeta.vercel.app/${params.country}`),
       },
     ],
   },
@@ -75,6 +86,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
-      </AuthProvider>
+    </AuthProvider>
   </React.StrictMode>
 );

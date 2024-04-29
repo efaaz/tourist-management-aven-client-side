@@ -40,16 +40,13 @@ function Register() {
         const createdAt = userCredential.user?.metadata?.creationTime;
         const email = userCredential.user?.email;
         const userInfo = { email, createdAt: createdAt };
-        fetch(
-          "https://server-side-ecru-zeta.vercel.app/user",
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(userInfo),
-          }
-        )
+        fetch("https://server-side-ecru-zeta.vercel.app/user", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.insertedId) {

@@ -8,10 +8,15 @@ function AboutSection() {
         <div className="flex flex-col md:flex-row items-center md:justify-between gap-6">
           <div className="">
             <p className="text-lg text-gray-700 leading-relaxed">
-              We are dedicated to providing the best travel experiences for our users. Our mission is to connect people with unique destinations, providing them with resources, travel tips, and inspiration to explore the world.
+              We are dedicated to providing the best travel experiences for our
+              users. Our mission is to connect people with unique destinations,
+              providing them with resources, travel tips, and inspiration to
+              explore the world.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mt-4">
-              If you'd like to know more about us or get in touch, please contact us through our website. We look forward to helping you plan your next adventure.
+              If you'd like to know more about us or get in touch, please
+              contact us through our website. We look forward to helping you
+              plan your next adventure.
             </p>
           </div>
         </div>

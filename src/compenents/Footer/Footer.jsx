@@ -8,7 +8,9 @@ function Footer() {
         <LiaAsymmetrik className="lg:text-5xl text-3xl"></LiaAsymmetrik>
         <h2 className="lg:text-4xl text-2xl">Aven</h2>
         <p>
-          Our team is comprised of experienced travelers, <br />We are passionate about helping others tour guides, and travel enthusiasts.
+          Our team is comprised of experienced travelers, <br />
+          We are passionate about helping others tour guides, and travel
+          enthusiasts.
           <br />
           Discover new places and create unforgettable memories.
         </p>

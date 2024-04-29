@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 
 function TravelTipsAndGuides() {
   const tips = [
@@ -8,60 +8,67 @@ function TravelTipsAndGuides() {
       title: "Pack Light and Smart",
       description:
         "Learn how to pack efficiently with our expert tips, ensuring you have everything you need without overpacking.",
-      image: "https://images.pexels.com/photos/1682694/pexels-photo-1682694.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image:
+        "https://images.pexels.com/photos/1682694/pexels-photo-1682694.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       title: "Travel Safety",
       description:
         "Get the latest safety tips for travelers, including how to stay secure and avoid common travel scams.",
-      image: "https://images.pexels.com/photos/732632/pexels-photo-732632.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image:
+        "https://images.pexels.com/photos/732632/pexels-photo-732632.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       title: "Must-See Destinations",
       description:
         "Explore our list of must-see destinations and plan your next trip with confidence.",
-      image: "https://images.pexels.com/photos/7236028/pexels-photo-7236028.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image:
+        "https://images.pexels.com/photos/7236028/pexels-photo-7236028.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
   ];
 
   return (
-    <section className="bg-gray-100 dark:bg-gray-800 py-10"> {/* Ensure background changes for dark theme */}
+    <section className="bg-gray-100 dark:bg-gray-800 py-10">
+      {" "}
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-6 dark:text-white"> {/* Ensure text changes for dark theme */}
-          Travel 
-          <span style={{ color: 'red', fontWeight: 'bold' }}>
-          <Typewriter
-            words={[' Tips and Guides!']} // Words to display
-            loop={5} // Number of times to loop
-            cursor // Enable cursor
-            cursorStyle="_" // Cursor style
-            typeSpeed={70} // Speed of typing
-            deleteSpeed={50} // Speed of deletion
-            delaySpeed={1000} // Delay between loops
-          />
-        </span>
+        <h2 className="text-3xl font-bold mb-6 dark:text-white">
+          {" "}
+          Travel
+          <span style={{ color: "red", fontWeight: "bold" }}>
+            <Typewriter
+              words={[" Tips and Guides!"]}
+              loop={5}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </span>
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {tips.map((tip, index) => (
             <div
               key={index}
               className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6"
-            > {/* Ensure card background changes for dark theme */}
+            >
+              {" "}
               <img
                 src={tip.image}
                 alt={tip.title}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-xl font-semibold mb-2 dark:text-white"> {/* Ensure text changes for dark theme */}
+              <h3 className="text-xl font-semibold mb-2 dark:text-white">
+                {" "}
                 {tip.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300"> {/* Ensure text changes for dark theme */}
+              <p className="text-gray-600 dark:text-gray-300">
+                {" "}
                 {tip.description}
               </p>
               <NavLink to="/more-tips" className="mt-4 inline-block">
-                <button
-                  className="bg-blue-500 dark:bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition duration-300"
-                > {/* Ensure button changes for dark theme */}
+                <button className="bg-blue-500 dark:bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
+                  {" "}
                   Learn More
                 </button>
               </NavLink>

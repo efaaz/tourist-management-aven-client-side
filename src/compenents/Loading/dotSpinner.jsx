@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function DotSpinner() {
-  return (
-    <span className="loading loading-dots loading-md"></span>
-  )
+  return <span className="loading loading-dots loading-md"></span>;
 }
 
-export default DotSpinner
+export default DotSpinner;

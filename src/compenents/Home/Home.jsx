@@ -4,8 +4,7 @@ import Cards from "../Cards/Cards";
 import Countires from "../Countries/Countires";
 import TravelTipsAndGuides from "../TravelGuidesSection/TravelTipsAndGuides";
 import AboutSection from "../AboutSection/AboutSection";
-import { Typewriter } from 'react-simple-typewriter';
-
+import { Typewriter } from "react-simple-typewriter";
 
 function Home() {
   let sopts = [
@@ -110,18 +109,17 @@ function Home() {
       <Cards></Cards>
       <div className="text-center max-w-7xl mx-auto">
         <h1 className="lg:text-4xl text-2xl font-bold text-[#131318] dark:text-white">
-          
-          <span style={{ color: 'red', fontWeight: 'bold' }}>
-          <Typewriter
-            words={['Country Section']} // Words to display
-            loop={7} // Number of times to loop
-            cursor // Enable cursor
-            cursorStyle="_" // Cursor style
-            typeSpeed={70} // Speed of typing
-            deleteSpeed={50} // Speed of deletion
-            delaySpeed={1000} // Delay between loops
-          />
-        </span>
+          <span style={{ color: "red", fontWeight: "bold" }}>
+            <Typewriter
+              words={["Country Section"]} // Words to display
+              loop={7} // Number of times to loop
+              cursor // Enable cursor
+              cursorStyle="_" // Cursor style
+              typeSpeed={70} // Speed of typing
+              deleteSpeed={50} // Speed of deletion
+              delaySpeed={1000} // Delay between loops
+            />
+          </span>
         </h1>
         <p className="text-[#03071299] font-normal lg:text-base text-xs pt-4 pb-12 px-6">
           Europe is a continent filled with history, culture, and stunning

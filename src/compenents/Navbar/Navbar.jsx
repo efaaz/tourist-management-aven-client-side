@@ -1,4 +1,3 @@
-
 import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -6,7 +5,7 @@ import DotSpinner from "../Loading/DotSpinner";
 import { useContext } from "react";
 
 function Navbar() {
-  const { user , logOut, loading } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   let img;
   if (user && user.photoURL) {
     img = user.photoURL;
@@ -90,7 +89,7 @@ function Navbar() {
                     }`
                   }
                 >
-                  My List 
+                  My List
                 </NavLink>
               </li>
             </ul>
@@ -144,17 +143,17 @@ function Navbar() {
               </NavLink>
             </li>
             <NavLink
-                  to="/my-list"
-                  className={({ isActive }) =>
-                    `mx-2 text-lg dark:text-white ${
-                      isActive
-                        ? "btn btn-outline rounded-full !text-yellow-500 font-semibold"
-                        : "text-gray-700"
-                    }`
-                  }
-                >
-                  My List 
-                </NavLink>
+              to="/my-list"
+              className={({ isActive }) =>
+                `mx-2 text-lg dark:text-white ${
+                  isActive
+                    ? "btn btn-outline rounded-full !text-yellow-500 font-semibold"
+                    : "text-gray-700"
+                }`
+              }
+            >
+              My List
+            </NavLink>
           </ul>
         </div>
         <div className="navbar-end">
@@ -186,17 +185,26 @@ function Navbar() {
                 )}
               </div>
               {user ? (
-                <button onClick={logOut} className="btn rounded-full btn-info text-white">
+                <button
+                  onClick={logOut}
+                  className="btn rounded-full btn-info text-white"
+                >
                   Sign Out
                 </button>
-              ) : ( <>
-                <Link to="/Sign-in" className="btn rounded-full btn-success lg:text-base text-sm mr-4 text-white">
-                 
+              ) : (
+                <>
+                  <Link
+                    to="/Sign-in"
+                    className="btn rounded-full btn-success lg:text-base text-sm mr-4 text-white"
+                  >
                     Log in
-                </Link>
-                <Link to="/Sign-up" className="btn rounded-full btn-success mr-4 text-white">
+                  </Link>
+                  <Link
+                    to="/Sign-up"
+                    className="btn rounded-full btn-success mr-4 text-white"
+                  >
                     Sign Up
-                </Link>
+                  </Link>
                 </>
               )}
             </>

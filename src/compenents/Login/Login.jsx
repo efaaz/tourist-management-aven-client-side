@@ -50,69 +50,77 @@ function Login() {
 
   const handleGitHubSignin = (event) => {
     setError("");
-    gitHubSignin()
+    gitHubSignin();
     googleSignin()
-    .then((userCredential) => {
-      console.log(userCredential);
-      const email = userCredential.user?.email;
-      const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
-      const creationTime = userCredential.user?.metadata?.creationTime
-      const userInfo = { email:email, creationTime:creationTime, lastLoggedAt: lastLoggedAt };
-      console.log(userInfo);
-      // update last logged at in the database
-      fetch("https://server-side-ecru-zeta.vercel.app/user", {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(userInfo),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          navigate(location?.state?.from?.pathname || "/");
+      .then((userCredential) => {
+        console.log(userCredential);
+        const email = userCredential.user?.email;
+        const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
+        const creationTime = userCredential.user?.metadata?.creationTime;
+        const userInfo = {
+          email: email,
+          creationTime: creationTime,
+          lastLoggedAt: lastLoggedAt,
+        };
+        console.log(userInfo);
+        // update last logged at in the database
+        fetch("https://server-side-ecru-zeta.vercel.app/user", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
         })
-        .catch((err) => {
-          console.log(err);
-        });
-    })
-    .catch((error) => {
-      setError(error.message);
-      toast("Invalid user credential");
-    });
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            navigate(location?.state?.from?.pathname || "/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((error) => {
+        setError(error.message);
+        toast("Invalid user credential");
+      });
   };
 
   const handleGoogleSignin = (event) => {
     setError("");
     googleSignin()
-    .then((userCredential) => {
-      console.log(userCredential);
-      const email = userCredential.user?.email;
-      const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
-      const creationTime = userCredential.user?.metadata?.creationTime
-      const userInfo = { email:email, creationTime:creationTime, lastLoggedAt: lastLoggedAt };
-      console.log(userInfo);
-      // update last logged at in the database
-      fetch("https://server-side-ecru-zeta.vercel.app/user", {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(userInfo),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          navigate(location?.state?.from?.pathname || "/");
+      .then((userCredential) => {
+        console.log(userCredential);
+        const email = userCredential.user?.email;
+        const lastLoggedAt = userCredential.user?.metadata?.lastSignInTime;
+        const creationTime = userCredential.user?.metadata?.creationTime;
+        const userInfo = {
+          email: email,
+          creationTime: creationTime,
+          lastLoggedAt: lastLoggedAt,
+        };
+        console.log(userInfo);
+        // update last logged at in the database
+        fetch("https://server-side-ecru-zeta.vercel.app/user", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
         })
-        .catch((err) => {
-          console.log(err);
-        });
-    })
-    .catch((error) => {
-      setError(error.message);
-      toast("Invalid user credential");
-    });
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            navigate(location?.state?.from?.pathname || "/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((error) => {
+        setError(error.message);
+        toast("Invalid user credential");
+      });
   };
   return (
     <>
