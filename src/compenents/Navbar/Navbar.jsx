@@ -112,7 +112,7 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost lg:text-3xl text-xl font-bold">
+          <Link to="/" className=" lg:text-3xl text-base font-bold">
             Aven
           </Link>
         </div>
@@ -175,7 +175,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="navbar-end">
-        <input type="checkbox" className="toggle mr-2" onChange={handleToggle} />
+        <input type="checkbox" className="toggle lg:mr-2 sm:mr-0" onChange={handleToggle} />
           {loading ? (
             // Display a loading spinner
             <div className="flex items-center justify-center">
@@ -214,13 +214,13 @@ function Navbar() {
                 <>
                   <Link
                     to="/Sign-in"
-                    className="btn rounded-full btn-success lg:text-base text-sm mr-4 text-white"
+                    className="btn rounded-full btn-success lg:text-base text-sm mr-2 text-white"
                   >
                     Log in
                   </Link>
                   <Link
                     to="/Sign-up"
-                    className="btn rounded-full btn-success mr-4 text-white"
+                    className="btn rounded-full btn-success mr-1 text-white"
                   >
                     Sign Up
                   </Link>
