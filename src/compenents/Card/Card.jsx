@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { FaLocationDot } from "react-icons/fa6";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { IoIosTime } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 function Card(props) {
@@ -29,16 +31,25 @@ function Card(props) {
               <div className="flex justify-between">
                 <div className="flex gap-1 items-center font-semibold">
                   <FaLocationDot />
-                  <p className="">{location}</p>
+                  <p className="font-bold">{location}</p>
                 </div>
-                <div className="">
-                  
+                <div>
+                <p className="font-bold text-base text-yellow-500">{country_name}</p>
                 </div>
               </div>
-              <h2 className="card-title">{tourists_spot_name}</h2>
-              <p className="font-semibold text-base">Country: {country_name}</p>
+              <h2 className="card-title font-bold">{tourists_spot_name}</h2>
+              
+              <hr />
+              <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mt-1">
+              <IoIosTime></IoIosTime>
               <p className="font-semibold text-base">Travle time: {travel_time}</p>
+              </div>
+              <div className="flex gap-1 text-lg items-center font-semibold text-gray-700 mb-1">
+              <HiOutlineUserGroup />
               <p className="font-semibold text-base">Visitors: {totaVisitorsPerYear} per year</p>
+              </div>
+              
+              <hr />
               <p className="font-bold text-xl">Avarage cost: ${average_cost}</p>
               <div className="card-actions justify-end">
                 <button className="btn btn-primary w-full">

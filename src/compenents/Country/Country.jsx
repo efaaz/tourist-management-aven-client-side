@@ -21,9 +21,11 @@ function Country(props) {
             </figure>
             <div className="card-body">
               <div className="flex justify-between">
-                <div className="flex gap-1 items-center font-semibold">
-                  <FaLocationDot />
-                  <h2 className="card-title">{country_name}</h2>
+                <div className="flex gap-1 items-center justify-center font-semibold">
+                  <div><FaLocationDot /></div>
+                  <div><h2 className="card-title">{country_name}</h2></div>
+                  
+                  
                 </div>
               </div>
               <p className="font-semibold text-base">{short_description}
