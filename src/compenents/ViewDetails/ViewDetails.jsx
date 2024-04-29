@@ -7,7 +7,6 @@ import { BsFillCloudsFill } from "react-icons/bs";
 
 function ViewDetails() {
   const data = useLoaderData();
-  console.log(data);
 
   const {
     seasonality,

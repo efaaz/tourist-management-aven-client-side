@@ -11,7 +11,6 @@ function CountryWiseSpots() {
       <div className="my-8 grid lg:grid-cols-3 grid-cols-1 max-w-7xl justify-center mx-auto md:grid-cols-2">
         {data.map((spot) => (
           <div key={spot._id} className="mb-4">
-            <NavLink to={`/viewDetails/${spot._id}`}>
               <div className="card card-compact w-96 h-[100%] bg-base-100 shadow-xl mx-auto">
                 <figure>
                   <img src={spot.image} alt="Tourist Spot" />
@@ -37,13 +36,12 @@ function CountryWiseSpots() {
                     Average cost: ${spot.average_cost}
                   </p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary w-full">
+                    <NavLink to={`/viewDetails/${spot._id}`} className="btn btn-primary w-full">
                       View Details
-                    </button>
+                    </NavLink>
                   </div>
                 </div>
               </div>
-            </NavLink>
           </div>
         ))}
       </div>

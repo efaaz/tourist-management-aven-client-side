@@ -76,7 +76,7 @@ function UpdateSpot() {
               <div className="mb-2">
                 <label
                   htmlFor="Name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium"
                 >
                   User Name
                 </label>
@@ -92,7 +92,7 @@ function UpdateSpot() {
               <div className="mb-2">
                 <label
                   htmlFor="Name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium"
                 >
                   Tourist Spot Name
                 </label>
@@ -108,7 +108,7 @@ function UpdateSpot() {
               <div className="mb-2">
                 <label
                   htmlFor="Name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium"
                 >
                   Avarage Cost
                 </label>
@@ -124,7 +124,7 @@ function UpdateSpot() {
               <div className="">
                 <label
                   htmlFor="Name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium"
                 >
                   Travel Time
                 </label>
@@ -142,7 +142,7 @@ function UpdateSpot() {
               <div className="mb-2">
                 <label
                   htmlFor="Name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium"
                 >
                   User Email
                 </label>
@@ -158,7 +158,7 @@ function UpdateSpot() {
               <div className="mb-2">
                 <label
                   htmlFor="Name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium"
                 >
                   Image url
                 </label>
@@ -174,7 +174,7 @@ function UpdateSpot() {
               <div className="mb-2">
                 <label
                   htmlFor="Name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium"
                 >
                   Seasonality
                 </label>
@@ -190,7 +190,7 @@ function UpdateSpot() {
               <div className="">
                 <label
                   htmlFor="Name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium"
                 >
                   Total Visitors Per Year
                 </label>
@@ -208,7 +208,7 @@ function UpdateSpot() {
           <div className="mb-2">
             <label
               htmlFor="Name"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              className="block mb-2 text-sm font-medium"
             >
               Location
             </label>
@@ -222,7 +222,7 @@ function UpdateSpot() {
             />
           </div>
           <div className="">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label className="block mb-2 text-sm font-medium">
               Short Description
             </label>
             <textarea

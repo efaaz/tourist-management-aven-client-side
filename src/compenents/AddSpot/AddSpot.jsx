@@ -48,7 +48,7 @@ function AddSpot() {
         if (data.acknowledged === true) {
           Swal.fire({
             title: "Success!",
-            text: "Updated Successfully",
+            text: "Added Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -79,7 +79,7 @@ function AddSpot() {
                 <div className="mb-2">
                   <label
                     htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium"
                   >
                     User Name
                   </label>
@@ -95,7 +95,7 @@ function AddSpot() {
                 <div className="mb-2">
                   <label
                     htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Tourist Spot Name
                   </label>
@@ -110,7 +110,7 @@ function AddSpot() {
                 <div className="mb-2">
                   <label
                     htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Avarage Cost
                   </label>
@@ -125,7 +125,7 @@ function AddSpot() {
                 <div className="">
                   <label
                     htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Travel Time
                   </label>
@@ -142,7 +142,7 @@ function AddSpot() {
                 <div className="mb-2">
                   <label
                     htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium"
                   >
                     User Email
                   </label>
@@ -158,7 +158,7 @@ function AddSpot() {
                 <div className="mb-2">
                   <label
                     htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Image url
                   </label>
@@ -173,7 +173,7 @@ function AddSpot() {
                 <div className="mb-2">
                   <label
                     htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Seasonality
                   </label>
@@ -188,7 +188,7 @@ function AddSpot() {
                 <div className="">
                   <label
                     htmlFor="Name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium"
                   >
                     Total Visitors Per Year
                   </label>
@@ -205,7 +205,7 @@ function AddSpot() {
             <div className="mb-2">
               <label
                 htmlFor="Name"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium"
               >
                 Location
               </label>
@@ -218,7 +218,7 @@ function AddSpot() {
               />
             </div>
             <div className="">
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label className="block mb-2 text-sm font-medium">
                 Short Description
               </label>
               <textarea

@@ -34,8 +34,8 @@ function AllSpot() {
       <>
         <div className="flex justify-center">
           <div className="dropdown dropdown-bottom text-center mt-6">
-            <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A]">
-              Sort By <IoIosArrowDown />
+            <div tabIndex={0} role="button" className="btn text-white m-1 bg-[#23BE0A]">
+              Sort By <IoIosArrowDown className="font-bold" />
             </div>
             <ul
               tabIndex={0}
@@ -58,55 +58,56 @@ function AllSpot() {
         <div className="my-8 grid lg:grid-cols-3 grid-cols-1 max-w-7xl justify-center mx-auto md:grid-cols-2">
           {spots.map((spot) => (
             <div key={spot._id} className="mb-4">
-              <NavLink to={`/viewDetails/${spot._id}`}>
-                <div className="card card-compact w-96 h-[100%] bg-base-100 shadow-xl mx-auto">
-                  <figure>
-                    <img
-                      src={spot.image} // Corrected image source
-                      alt="Estate"
-                    />
-                  </figure>
-                  <div className="card-body">
-                    <div className="flex justify-between">
-                      <div className="flex gap-1 items-center font-semibold">
-                        <FaLocationDot />
-                        <p className="font-bold">{spot.location}</p>
-                      </div>
-                      <div>
-                        <p className="font-bold text-base text-yellow-500">
-                          {spot.country_name}
-                        </p>
-                      </div>
+              <div className="card card-compact w-96 h-[100%] bg-base-100 shadow-xl mx-auto">
+                <figure>
+                  <img
+                    src={spot.image} // Corrected image source
+                    alt="Estate"
+                  />
+                </figure>
+                <div className="card-body">
+                  <div className="flex justify-between">
+                    <div className="flex gap-1 items-center font-semibold">
+                      <FaLocationDot />
+                      <p className="font-bold">{spot.location}</p>
                     </div>
-                    <h2 className="card-title font-bold">
-                      {spot.tourists_spot_name}
-                    </h2>
-                    <hr />
-                    <div className="flex gap-1 text-lg items-center font-semibol mt-1">
-                      <IoIosTime></IoIosTime>
-                      <p className="font-semibold text-base">
-                        Travle time: {spot.travel_time}
+                    <div>
+                      <p className="font-bold text-base text-yellow-500">
+                        {spot.country_name}
                       </p>
-                    </div>
-                    <div className="flex gap-1 text-lg items-center font-semibold mb-1">
-                      <HiOutlineUserGroup />
-                      <p className="font-semibold text-base">
-                        Visitors: {spot.totaVisitorsPerYear} per year
-                      </p>
-                    </div>
-
-                    <hr />
-                    <p className="font-bold text-xl">
-                      Average cost: ${spot.average_cost}
-                    </p>
-                    <div className="card-actions justify-end">
-                      <button className="btn btn-primary w-full">
-                        View Details
-                      </button>
                     </div>
                   </div>
+                  <h2 className="card-title font-bold">
+                    {spot.tourists_spot_name}
+                  </h2>
+                  <hr />
+                  <div className="flex gap-1 text-lg items-center font-semibol mt-1">
+                    <IoIosTime></IoIosTime>
+                    <p className="font-semibold text-base">
+                      Travle time: {spot.travel_time}
+                    </p>
+                  </div>
+                  <div className="flex gap-1 text-lg items-center font-semibold mb-1">
+                    <HiOutlineUserGroup />
+                    <p className="font-semibold text-base">
+                      Visitors: {spot.totaVisitorsPerYear} per year
+                    </p>
+                  </div>
+
+                  <hr />
+                  <p className="font-bold text-xl">
+                    Average cost: ${spot.average_cost}
+                  </p>
+                  <div className="card-actions justify-end">
+                    <NavLink
+                      to={`/viewDetails/${spot._id}`}
+                      className="btn btn-primary w-full"
+                    >
+                      View Details
+                    </NavLink>
+                  </div>
                 </div>
-              </NavLink>
+              </div>
             </div>
           ))}
         </div>

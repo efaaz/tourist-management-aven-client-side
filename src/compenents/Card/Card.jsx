@@ -18,7 +18,6 @@ function Card(props) {
   return (
     <>
       <div className="mb-6" data-aos="zoom-in">
-        <NavLink to={`/viewDetails/${_id}`}>
           <div className="card card-compact w-96 h-[100%] bg-base-100 shadow-xl mx-auto">
             <figure>
               <img
@@ -57,13 +56,12 @@ function Card(props) {
               <hr />
               <p className="font-bold text-xl">Avarage cost: ${average_cost}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary w-full">
+                <NavLink to={`/viewDetails/${_id}`} className="btn btn-primary w-full">
                   View Details{" "}
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
-        </NavLink>
       </div>
     </>
   );
