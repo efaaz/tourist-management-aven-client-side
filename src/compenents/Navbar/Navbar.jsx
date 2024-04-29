@@ -190,15 +190,12 @@ function Navbar() {
                   Sign Out
                 </button>
               ) : ( <>
-                <Link to="/Sign-in">
-                  <button className="btn rounded-full btn-success mr-4 text-white">
+                <Link to="/Sign-in" className="btn rounded-full btn-success lg:text-base text-sm mr-4 text-white">
+                 
                     Log in
-                  </button>
                 </Link>
-                <Link to="/Sign-up">
-                  <button className="btn rounded-full btn-success mr-4 text-white">
+                <Link to="/Sign-up" className="btn rounded-full btn-success mr-4 text-white">
                     Sign Up
-                  </button>
                 </Link>
                 </>
               )}
